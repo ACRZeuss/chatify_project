@@ -48,7 +48,7 @@ Bu projeyi yerel makinenizde çalıştırmak için aşağıdaki adımları izley
 
 1.  **Projeyi Klonlayın (veya indirin):**
     ```bash
-    git clone <proje_git_adresi>
+    git clone https://github.com/ACRZeuss/chatify_project.git
     cd chatify_project
     ```
 
