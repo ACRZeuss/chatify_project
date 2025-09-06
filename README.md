@@ -2,7 +2,7 @@
 
 `Chatify`, Python (Django & Channels) backend ve Vanilla JavaScript frontend kullanılarak geliştirilmiş, web tabanlı, modern ve gerçek zamanlı bir sohbet uygulamasıdır. Kullanıcıların dinamik olarak sohbet odaları oluşturmasına ve anlık olarak mesajlaşmasına olanak tanır.
 
-![Chatify Ekran Görüntüsü](https://imgur.com/a/ac3zKW7)
+![Chatify Ekran Görüntüsü](https://imgur.com/G74nhmq)
 *(Bu alana projenizin kendi ekran görüntüsünü ekleyebilirsiniz)*
 
 ---
