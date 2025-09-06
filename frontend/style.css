@@ -1,0 +1,137 @@
+:root {
+  --bg-primary: #ffffff;
+  --bg-secondary: #f7f7f7;
+  --text-primary: #1a1a1a;
+  --text-secondary: #555555;
+  --border-color: #e0e0e0;
+  --accent-color: #007bff;
+  --accent-text-color: #ffffff;
+  --shadow-color: rgba(0, 0, 0, 0.1);
+}
+
+/* body elementine .dark-mode class'ı eklendiğinde,
+  bu bloktaki değişkenler yukarıdakilerin üzerine yazılır ve tema değişir.
+*/
+body.dark-mode {
+  --bg-primary: #121212;
+  --bg-secondary: #1e1e1e;
+  --text-primary: #e0e0e0;
+  --text-secondary: #aaaaaa;
+  --border-color: #333333;
+  --accent-color: #bb86fc;
+  --accent-text-color: #121212;
+  --shadow-color: rgba(0, 0, 0, 0.4);
+}
+
+/* Sayfa genelindeki tüm renk geçişlerini yumuşatır */
+* {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
+}
+
+#app {
+  width: 600px;
+  background-color: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px var(--shadow-color);
+  position: relative;
+}
+
+.theme-button {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: 1px solid var(--border-color);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    font-size: 18px;
+}
+.theme-button:hover {
+    background-color: var(--bg-secondary);
+}
+
+.hidden {
+  display: none;
+}
+
+h2, h3 {
+    color: var(--text-primary);
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 10px;
+}
+
+input[type="text"], input[type="password"] {
+  width: 95%;
+  padding: 12px;
+  margin-bottom: 12px;
+  border-radius: 6px;
+  border: 1px solid var(--border-color);
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
+}
+
+button {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 6px;
+  background-color: var(--accent-color);
+  color: var(--accent-text-color);
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+#logout-button, #back-to-rooms {
+    background-color: var(--bg-secondary);
+    color: var(--text-secondary);
+    border: 1px solid var(--border-color);
+}
+
+#chat-log {
+  height: 400px;
+  border: 1px solid var(--border-color);
+  background-color: var(--bg-secondary);
+  overflow-y: scroll;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 6px;
+}
+#chat-log div {
+    padding: 4px 0;
+}
+
+#chat-form {
+  display: flex;
+}
+#chat-message-input {
+  flex-grow: 1;
+  margin-bottom: 0;
+}
+
+#room-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.room-btn {
+    width: 100%;
+    text-align: left;
+    background-color: var(--bg-secondary);
+    color: var(--text-primary);
+}

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Gelişmiş Chatify</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="app">
+      <button id="dark-mode-toggle" class="theme-button">🌙</button>
+      <div id="login-container">
+        <h2>Giriş Yap</h2>
+        <form id="login-form">
+          <input
+            type="text"
+            name="username"
+            placeholder="Kullanıcı Adı"
+            required
+          />
+          <input type="password" name="password" placeholder="Şifre" required />
+          <button type="submit">Giriş Yap</button>
+        </form>
+      </div>
+
+      <div id="room-container" class="hidden">
+        <h2>Sohbet Odaları</h2>
+        <div id="room-list"></div>
+        <hr />
+        <h3>Yeni Oda Oluştur</h3>
+        <form id="create-room-form">
+          <input
+            type="text"
+            id="new-room-name"
+            placeholder="Oda Adı"
+            required
+          />
+          <button type="submit">Oluştur</button>
+        </form>
+
+        <button
+          id="test-ws-button"
+          style="background-color: #ffc107; margin-top: 15px"
+        >
+          WebSocket TEST
+        </button>
+
+        <button id="logout-button">Çıkış Yap</button>
+      </div>
+
+      <div id="chat-container" class="hidden">
+        <button id="back-to-rooms">← Odalara Geri Dön</button>
+        <h2 id="chat-room-name"></h2>
+        <div id="chat-log"></div>
+        <form id="chat-form">
+          <input
+            id="chat-message-input"
+            type="text"
+            placeholder="Mesajını yaz..."
+          />
+          <button type="submit">Gönder</button>
+        </form>
+      </div>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>
