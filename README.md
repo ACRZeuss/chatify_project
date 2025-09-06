@@ -62,7 +62,7 @@ Bu projeyi yerel makinenizde çalıştırmak için aşağıdaki adımları izley
 
 3.  **Gerekli Python Kütüphanelerini Yükleyin:**
     ```bash
-    pip install django daphne channels channels-redis djangorestframework django-cors-headers cryptography
+    pip install -r requirements.txt
     ```
 
 4.  **Şifreleme Anahtarı Oluşturun ve Ayarlayın:**
