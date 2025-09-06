@@ -2,7 +2,7 @@
 import json
 from channels.generic.websocket import AsyncWebsocketConsumer
 from channels.db import database_sync_to_async
-from .models import ChatRoom, Message
+from .models import ChatRoom, Message, fernet # fernet'i modelden import et
 
 class ChatConsumer(AsyncWebsocketConsumer):
     @database_sync_to_async
@@ -14,7 +14,15 @@ class ChatConsumer(AsyncWebsocketConsumer):
 
     @database_sync_to_async
     def save_message(self, room, content):
-        Message.objects.create(room=room, author=self.scope['user'], content=content)
+        # Mesajı şifrele
+        encrypted_message = fernet.encrypt(content.encode())
+        # Veritabanına şifreli halini kaydet
+        Message.objects.create(
+            room=room,
+            author=self.scope['user'],
+            encrypted_content=encrypted_message.decode()
+        )
+
 
     async def connect(self):
         self.room_slug = self.scope['url_route']['kwargs']['room_slug']
@@ -40,6 +48,7 @@ class ChatConsumer(AsyncWebsocketConsumer):
         message = text_data_json['message']
         username = self.scope['user'].username
 
+        # DEĞİŞEN KISIM: save_message artık şifreleme yapıyor
         await self.save_message(self.room, message)
 
         await self.channel_layer.group_send(
